@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var tileMap: TileMapLayer
 @export var speed = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -9,12 +9,12 @@ func printHello() -> void:
 
 
 func _process(delta: float) -> void:
-	pass
+	movement_handler(delta)
 
 
 
 func _physics_process(delta: float) -> void:
-	movement_handler(delta)
+	pass
 	
 
 

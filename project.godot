@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="ParusGame"
-run/main_scene="res://objects/player/player.tscn"
+run/main_scene="res://objects/world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 

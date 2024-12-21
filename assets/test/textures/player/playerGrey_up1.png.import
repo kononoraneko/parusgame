@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buujyd3trwlwk"
-path="res://.godot/imported/Path_Tile.png-1715571afba6907eda9d52418ec2893b.ctex"
+uid="uid://b7tmuf845ei1y"
+path="res://.godot/imported/playerGrey_up1.png-886c11def9be9963e5d9eeb51c8be2cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Path_Tile.png"
-dest_files=["res://.godot/imported/Path_Tile.png-1715571afba6907eda9d52418ec2893b.ctex"]
+source_file="res://assets/test/textures/player/playerGrey_up1.png"
+dest_files=["res://.godot/imported/playerGrey_up1.png-886c11def9be9963e5d9eeb51c8be2cc.ctex"]
 
 [params]
 

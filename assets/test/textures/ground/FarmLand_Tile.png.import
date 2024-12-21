@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3tn4aad63dd2"
-path="res://.godot/imported/Water_Middle.png-16189b391d4424f76d085c0a70dca8e3.ctex"
+uid="uid://b42enthuxdubk"
+path="res://.godot/imported/FarmLand_Tile.png-5115f9180f59b79a9715a74ab930e965.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Water_Middle.png"
-dest_files=["res://.godot/imported/Water_Middle.png-16189b391d4424f76d085c0a70dca8e3.ctex"]
+source_file="res://assets/test/textures/ground/FarmLand_Tile.png"
+dest_files=["res://.godot/imported/FarmLand_Tile.png-5115f9180f59b79a9715a74ab930e965.ctex"]
 
 [params]
 

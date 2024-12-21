@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5yfwbhb7jf6t"
-path="res://.godot/imported/Path_Middle.png-563579643e281418e8043df111b8cc56.ctex"
+uid="uid://buujyd3trwlwk"
+path="res://.godot/imported/Path_Tile.png-e1f05a332f389b702e02176d98f98cb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Path_Middle.png"
-dest_files=["res://.godot/imported/Path_Middle.png-563579643e281418e8043df111b8cc56.ctex"]
+source_file="res://assets/test/textures/ground/Path_Tile.png"
+dest_files=["res://.godot/imported/Path_Tile.png-e1f05a332f389b702e02176d98f98cb0.ctex"]
 
 [params]
 
