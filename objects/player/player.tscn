@@ -1,47 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://ba17cqsdlnuii"]
+[gd_scene load_steps=5 format=3 uid="uid://ba17cqsdlnuii"]
 
 [ext_resource type="Script" path="res://objects/player/player.gd" id="1_8a42h"]
-[ext_resource type="Texture2D" uid="uid://b7tmuf845ei1y" path="res://assets/test/textures/player/playerGrey_up1.png" id="2_gy0l4"]
-[ext_resource type="Texture2D" uid="uid://cejrhtagan03w" path="res://assets/test/textures/player/playerGrey_up2.png" id="3_f7dar"]
-[ext_resource type="Texture2D" uid="uid://cemktc1o8wf5g" path="res://assets/test/textures/player/playerGrey_walk1.png" id="4_p8351"]
-[ext_resource type="Texture2D" uid="uid://cm0a0qso2nlrw" path="res://assets/test/textures/player/playerGrey_walk2.png" id="5_hi27y"]
+[ext_resource type="SpriteFrames" uid="uid://bhsrml1l786dk" path="res://objects/player/player_frames.tres" id="2_v3jyy"]
 [ext_resource type="Script" path="res://objects/player/camera.gd" id="6_r0fg6"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_p22w8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_gy0l4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_f7dar")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_p8351")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_hi27y")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p53ep"]
-radius = 26.0
-height = 66.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7prk6"]
+size = Vector2(10, 5.5)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_8a42h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_p22w8")
+texture_filter = 1
+sprite_frames = ExtResource("2_v3jyy")
+animation = &"walk_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_p53ep")
+position = Vector2(0, 12.75)
+shape = SubResource("RectangleShape2D_7prk6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
 limit_smoothed = true
