@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://cdagkvxfu2typ"]
+[gd_scene load_steps=5 format=3 uid="uid://cdagkvxfu2typ"]
+
+[ext_resource type="Script" path="res://objects/button.gd" id="1_wqcvx"]
+[ext_resource type="Texture2D" uid="uid://cwrha2waai8u4" path="res://assets/buttons/help.png" id="2_ojg0g"]
+[ext_resource type="Texture2D" uid="uid://b8o10fxuj5cvv" path="res://assets/buttons/settings.png" id="3_2q1np"]
+[ext_resource type="StyleBox" uid="uid://dna04g0ctt170" path="res://assets/buttons/color.tres" id="3_nixdk"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -20,32 +25,55 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 54.035)
-layout_mode = 2
-text = "4percent"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
+[node name="Control4" type="Control" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.768627, 0.54902, 0.705882, 1)
+text = "МЕНЮ"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 44.155)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("3_nixdk")
 text = "Играть"
+script = ExtResource("1_wqcvx")
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 18.215)
 layout_mode = 2
 
 [node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("3_nixdk")
 text = "Выйти из игры"
+
+[node name="Control3" type="Control" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.768697, 0.549443, 0.706819, 1)
+text = "by 4percent"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -64,15 +92,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer3/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-size_flags_horizontal = 8
+icon = ExtResource("2_ojg0g")
 
 [node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer3/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 8
+icon = ExtResource("3_2q1np")
 
 [node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button" to="HBoxContainer/VBoxContainer2/Button" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button2" to="HBoxContainer/VBoxContainer2/Button" method="_on_button_2_pressed"]
