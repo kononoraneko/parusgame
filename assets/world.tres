@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://d3ggs0fawa1g1"]
 
-[ext_resource type="Texture2D" uid="uid://de3bo3ptxat6g" path="res://assets/textures/Beach_Tile.png" id="1_6ks6a"]
-[ext_resource type="Texture2D" uid="uid://3tn4aad63dd2" path="res://assets/textures/Water_Middle.png" id="2_0kyq3"]
-[ext_resource type="Texture2D" uid="uid://buujyd3trwlwk" path="res://assets/textures/Path_Tile.png" id="3_m43ci"]
-[ext_resource type="Texture2D" uid="uid://bkajxrktdgxkk" path="res://assets/textures/Grass_Middle.png" id="4_ojwkw"]
+[ext_resource type="Texture2D" uid="uid://de3bo3ptxat6g" path="res://assets/test/textures/ground/Beach_Tile.png" id="1_6ks6a"]
+[ext_resource type="Texture2D" uid="uid://3tn4aad63dd2" path="res://assets/test/textures/ground/Water_Middle.png" id="2_0kyq3"]
+[ext_resource type="Texture2D" uid="uid://buujyd3trwlwk" path="res://assets/test/textures/ground/Path_Tile.png" id="3_m43ci"]
+[ext_resource type="Texture2D" uid="uid://bkajxrktdgxkk" path="res://assets/test/textures/ground/Grass_Middle.png" id="4_ojwkw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qktb"]
 texture = ExtResource("1_6ks6a")
@@ -23,7 +23,9 @@ texture = ExtResource("1_6ks6a")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mdf0x"]
 texture = ExtResource("2_0kyq3")
+use_texture_padding = false
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xeitc"]
 texture = ExtResource("3_m43ci")
@@ -49,6 +51,7 @@ texture = ExtResource("4_ojwkw")
 0:0/0 = 0
 
 [resource]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5qktb")
 sources/1 = SubResource("TileSetAtlasSource_mdf0x")
 sources/2 = SubResource("TileSetAtlasSource_xeitc")
