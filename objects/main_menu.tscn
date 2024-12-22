@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cdagkvxfu2typ"]
+[gd_scene load_steps=2 format=3 uid="uid://cdagkvxfu2typ"]
+
+[ext_resource type="Script" path="res://objects/button.gd" id="1_wqcvx"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -37,6 +39,7 @@ custom_minimum_size = Vector2(0, 44.155)
 layout_mode = 2
 size_flags_vertical = 6
 text = "Играть"
+script = ExtResource("1_wqcvx")
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 18.215)
@@ -76,3 +79,6 @@ size_flags_horizontal = 8
 [node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button" to="HBoxContainer/VBoxContainer2/Button" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button2" to="HBoxContainer/VBoxContainer2/Button" method="_on_button_2_pressed"]
