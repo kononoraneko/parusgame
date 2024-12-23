@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=4 uid="uid://dg71a47enlin"]
 
-[ext_resource type="Script" path="res://scenes/world.gd" id="1_bx63j"]
-[ext_resource type="TileSet" uid="uid://d3ggs0fawa1g1" path="res://assets/houses/world.tres" id="2_luaee"]
+[ext_resource type="Script" path="res://objects/world.gd" id="1_bx63j"]
+[ext_resource type="TileSet" uid="uid://d3ggs0fawa1g1" path="res://assets/world.tres" id="2_luaee"]
 [ext_resource type="Script" path="res://objects/player/camera.gd" id="3_ah5ej"]
 [ext_resource type="PackedScene" uid="uid://ba17cqsdlnuii" path="res://objects/player/player.tscn" id="4_uuhwr"]
-[ext_resource type="PackedScene" uid="uid://6ahcaj7mnw1s" path="res://objects/scene_manager/scene_trigger.tscn" id="5_cek71"]
-[ext_resource type="PackedScene" uid="uid://u2a1otuj140r" path="res://objects/items/stick.tscn" id="6_qva6u"]
+[ext_resource type="PackedScene" uid="uid://6ahcaj7mnw1s" path="res://objects/scene_trigger.tscn" id="5_cek71"]
+[ext_resource type="PackedScene" uid="uid://u2a1otuj140r" path="res://objects/stick.tscn" id="6_qva6u"]
+[ext_resource type="PackedScene" uid="uid://cyuc171yjobc3" path="res://objects/npc/npc.tscn" id="6_sqvqt"]
 [ext_resource type="SpriteFrames" uid="uid://bhsrml1l786dk" path="res://objects/player/player_frames.tres" id="7_mlarw"]
-[ext_resource type="PackedScene" uid="uid://5xs1vnhijpom" path="res://objects/items/collectable.tscn" id="8_xumov"]
-[ext_resource type="PackedScene" uid="uid://wfuc7jdv7fx4" path="res://objects/npc/npc.tscn" id="10_uhh7y"]
+[ext_resource type="PackedScene" uid="uid://5xs1vnhijpom" path="res://objects/collectable.tscn" id="8_xumov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpext"]
 size = Vector2(35, 30)
@@ -118,12 +118,11 @@ position = Vector2(2141, 1074)
 [node name="Node2D6" parent="Items/items" instance=ExtResource("8_xumov")]
 position = Vector2(2108, 1085)
 
-[node name="NPC" parent="." instance=ExtResource("10_uhh7y")]
-position = Vector2(2259, 849)
+[node name="NPC" parent="." instance=ExtResource("6_sqvqt")]
+position = Vector2(2292, 886)
 frames = ExtResource("7_mlarw")
-lore_name = "npc"
 
-[node name="Bob" parent="." instance=ExtResource("10_uhh7y")]
-position = Vector2(2119, 898)
+[node name="NPC2" parent="." instance=ExtResource("6_sqvqt")]
+position = Vector2(2143, 830)
 frames = ExtResource("7_mlarw")
 lore_name = "Bob"

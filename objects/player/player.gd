@@ -3,15 +3,32 @@ class_name Player extends CharacterBody2D
 @export var tileMap: TileMapLayer
 @export var speed = 300.0
 
-var sticks = 0
-
 var dialog_step = 0
 var dialog_array = []
 var is_dialog_opened:bool = false
 
 
+var items = []
+
+
+func get_item_count(item: CollectableItem) -> int:
+	var count = 0
+	for i in items:
+		if i.item_name == item.item_name:
+			count += 1
+	return count
+
+func remove_items(item:CollectableItem, count:int):
+	for _i in range(count):
+		for i in items:
+			if i.item_name == item.item_name:
+				items.erase(i)
+				break
+
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
+	
+	
 
 func _process(delta: float) -> void:
 	if !is_dialog_opened:
