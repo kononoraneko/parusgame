@@ -4,16 +4,12 @@ var player: Player
 var last_scene_name: String
 var world = PackedScene.new()
 
-var marker
-
 var scene_dir_path = "res://scenes/"
 
 
-func change_scene(from, to_scene_name: String, _marker = null) -> void:
+func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name 
 	player = from.player
-	
-	marker = _marker
 	
 	if from.name == "World":
 		for child in from.get_children():

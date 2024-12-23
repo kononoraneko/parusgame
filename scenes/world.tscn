@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dg71a47enlin"]
+[gd_scene load_steps=12 format=4 uid="uid://dg71a47enlin"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_bx63j"]
 [ext_resource type="TileSet" uid="uid://d3ggs0fawa1g1" path="res://assets/houses/world.tres" id="2_luaee"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://u2a1otuj140r" path="res://objects/items/stick.tscn" id="6_qva6u"]
 [ext_resource type="SpriteFrames" uid="uid://bhsrml1l786dk" path="res://objects/player/player_frames.tres" id="7_mlarw"]
 [ext_resource type="PackedScene" uid="uid://5xs1vnhijpom" path="res://objects/items/collectable.tscn" id="8_xumov"]
+[ext_resource type="PackedScene" uid="uid://bkirpo07thb5u" path="res://objects/interactable_objects/squid.tscn" id="10_d8chf"]
 [ext_resource type="PackedScene" uid="uid://wfuc7jdv7fx4" path="res://objects/npc/npc.tscn" id="10_uhh7y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpext"]
@@ -127,3 +128,12 @@ lore_name = "npc"
 position = Vector2(2119, 898)
 frames = ExtResource("7_mlarw")
 lore_name = "Bob"
+
+[node name="Ivan" parent="." instance=ExtResource("10_uhh7y")]
+position = Vector2(2278, 1037)
+frames = ExtResource("7_mlarw")
+lore_name = "Ivan"
+can_interact = false
+
+[node name="Entity" parent="." instance=ExtResource("10_d8chf")]
+position = Vector2(2404, 737)

@@ -5,6 +5,7 @@ func _init(_dialogs, _completed_dialogs):
 	completed_dialogs = _completed_dialogs
 	dialogs = _dialogs
 
+
 func update(npc:NPC, player:Player):
 	if is_done:
 		return

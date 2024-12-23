@@ -86,7 +86,7 @@ func input_handler() -> void:
 			$CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer/DialogTextLabel.text = dialog_array[dialog_step]
 
 	elif $InteractRayCast.is_colliding():
-		if $InteractRayCast.get_collider().get_parent().has_method("interact"):
+		if $InteractRayCast.get_collider().get_parent().has_method("interact") and $InteractRayCast.get_collider().get_parent().can_interact:
 			$Label.show()
 			if Input.is_action_just_pressed("interact"):
 				$InteractRayCast.get_collider().get_parent().interact(self)

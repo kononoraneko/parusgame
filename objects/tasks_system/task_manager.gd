@@ -2,7 +2,10 @@ extends Node
 
 var current_chapter = 0
 
-var tasks = [CollectItemsTask.new(
+var defaultDialog = ["Привет! Как дела?", "Пока"]
+
+var tasks = [
+	CollectItemsTask.new(
 		{
 			"npc": [["Привет! выполни мне задания"],["Спасибо, что выполнил."]]
 		},
@@ -11,7 +14,18 @@ var tasks = [CollectItemsTask.new(
 		},
 		Stick.new(),
 		3
-	)]
+	),
+	TalkTask.new(
+		{
+			"Bob": [["Дарова. Поговори с Ваней", "Ваня находится где то там"],defaultDialog],
+			"Ivan": [["Привет!"], ["Че смотришь?"]],
+		},
+		{
+			"Bob":0,
+			"Ivan":0
+		}
+	)
+	]
 
 
 func get_dialog(npc: NPC, player:Player):
@@ -20,7 +34,7 @@ func get_dialog(npc: NPC, player:Player):
 			if dialog == npc.lore_name:
 				task.update(npc, player)
 				return task.dialogs[dialog][task.is_done]
-	return ["Привет! Как дела?", "Пока"]
+	return defaultDialog
 
 
 func next_chapter():
@@ -39,8 +53,6 @@ func next_chapter():
 	)]
 	else:
 		tasks = []
-	
-
 
 
 func update():
