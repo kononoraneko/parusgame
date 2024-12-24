@@ -3,15 +3,32 @@ class_name Player extends CharacterBody2D
 @export var tileMap: TileMapLayer
 @export var speed = 300.0
 
-var sticks = 0
-
 var dialog_step = 0
 var dialog_array = []
 var is_dialog_opened:bool = false
 
 
+var items = []
+
+
+func get_item_count(item: CollectableItem) -> int:
+	var count = 0
+	for i in items:
+		if i.item_name == item.item_name:
+			count += 1
+	return count
+
+func remove_items(item:CollectableItem, count:int):
+	for _i in range(count):
+		for i in items:
+			if i.item_name == item.item_name:
+				items.erase(i)
+				break
+
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
+	
+	
 
 func _process(delta: float) -> void:
 	if !is_dialog_opened:
@@ -69,7 +86,7 @@ func input_handler() -> void:
 			$CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer/DialogTextLabel.text = dialog_array[dialog_step]
 
 	elif $InteractRayCast.is_colliding():
-		if $InteractRayCast.get_collider().get_parent().has_method("interact"):
+		if $InteractRayCast.get_collider().get_parent().has_method("interact") and $InteractRayCast.get_collider().get_parent().can_interact:
 			$Label.show()
 			if Input.is_action_just_pressed("interact"):
 				$InteractRayCast.get_collider().get_parent().interact(self)

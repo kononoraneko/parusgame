@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkirpo07thb5u"]
+
+[ext_resource type="PackedScene" uid="uid://cqxnimoj6ychs" path="res://objects/entity/entity.tscn" id="1_huuoe"]
+[ext_resource type="Texture2D" uid="uid://b7tmuf845ei1y" path="res://assets/test/textures/player/playerGrey_up1.png" id="2_73der"]
+[ext_resource type="Script" path="res://objects/interactable_objects/squid.gd" id="2_maecn"]
+[ext_resource type="Texture2D" uid="uid://cejrhtagan03w" path="res://assets/test/textures/player/playerGrey_up2.png" id="3_ig8tg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwhit"]
+radius = 27.0
+height = 68.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_py08n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_73der")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ig8tg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Entity" instance=ExtResource("1_huuoe")]
+script = ExtResource("2_maecn")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_fwhit")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -16)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_py08n")
+animation = &"default"

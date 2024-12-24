@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqxnimoj6ychs"]
+
+[ext_resource type="SpriteFrames" uid="uid://bhsrml1l786dk" path="res://objects/player/player_frames.tres" id="1_5ovtb"]
+[ext_resource type="Script" path="res://objects/entity/entity.gd" id="1_k1krv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uh44"]
+size = Vector2(22, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ietli"]
+size = Vector2(40, 58)
+
+[node name="Entity" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_k1krv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_1uh44")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -32)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_5ovtb")
+animation = &"idle"
+
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_ietli")

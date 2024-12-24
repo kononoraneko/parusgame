@@ -1,11 +1,9 @@
-class_name NPC extends CharacterBody2D
+class_name NPC extends Entity
 
-@export var frames: SpriteFrames
+var progress = 0
+var needed_progress = 1
 
-func _ready() -> void:
-	$AnimatedSprite2D.sprite_frames = frames
-	$AnimatedSprite2D.play("idle")
-
+var tasks = []
 
 func interact(player: Player) -> void:
-	player.show_dialog(["Привет!", "Как дела?"])
+	player.show_dialog(TaskManager.get_dialog(self, player))
