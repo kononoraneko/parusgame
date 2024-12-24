@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ParusGame"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://objects/UI/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -58,3 +58,7 @@ interact={
 2d_physics/layer_1="player"
 2d_physics/layer_2="triggers"
 2d_physics/layer_3="interactions"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.18914, 0.318734, 0.389549, 1)
