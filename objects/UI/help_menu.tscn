@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://bmoypvxcqx4fs" path="res://assets/buttons/hover_color.tres" id="1_p1x6i"]
 [ext_resource type="StyleBox" uid="uid://dna04g0ctt170" path="res://assets/buttons/color.tres" id="2_mx2fq"]
-[ext_resource type="Script" path="res://objects/button.gd" id="3_l3o1n"]
+[ext_resource type="Script" path="res://objects/UI/button.gd" id="3_l3o1n"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -51,6 +51,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 358.0
 offset_top = 103.0
 offset_right = 799.0
