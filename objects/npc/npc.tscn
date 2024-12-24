@@ -5,3 +5,9 @@
 
 [node name="NPC" instance=ExtResource("1_ut3ak")]
 script = ExtResource("2_yimc5")
+
+[node name="InteractArea" parent="." index="2"]
+position = Vector2(0, -3)
+
+[node name="CollisionShape2D" parent="InteractArea" index="0"]
+position = Vector2(0, -6)

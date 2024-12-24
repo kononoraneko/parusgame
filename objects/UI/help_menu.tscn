@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://bmoypvxcqx4fs" path="res://assets/buttons/hover_color.tres" id="1_p1x6i"]
 [ext_resource type="StyleBox" uid="uid://dna04g0ctt170" path="res://assets/buttons/color.tres" id="2_mx2fq"]
-[ext_resource type="Script" path="res://objects/UI/button.gd" id="3_l3o1n"]
+[ext_resource type="Script" path="res://objects/UI/main_menu.gd" id="3_l3o1n"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
