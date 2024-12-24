@@ -3,7 +3,7 @@ extends Entity
 func  _ready() -> void:
 	pass
 
-func interact(player:Player):
+func interact(_player:Player):
 	if $AnimatedSprite2D.frame == 1:
 		$AnimatedSprite2D.frame = 0
 	else:

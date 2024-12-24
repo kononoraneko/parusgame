@@ -45,7 +45,6 @@ tileMap = NodePath("../TileMapLayer3")
 
 [node name="Player" parent="." node_paths=PackedStringArray("tileMap") instance=ExtResource("4_uuhwr")]
 z_index = 1
-position = Vector2(2210, 955)
 tileMap = NodePath("../TileMapLayer3")
 speed = 160.0
 

@@ -15,7 +15,7 @@ var dialogs = {
 
 var collectable_item: CollectableItem 
 
-func update(npc, player):
+func update(_npc, _player):
 	print("Task update")
 
 

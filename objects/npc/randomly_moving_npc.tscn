@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://qc4v20gtwpeo"]
+
+[ext_resource type="PackedScene" uid="uid://cqxnimoj6ychs" path="res://objects/entity/entity.tscn" id="1_rhn7a"]
+[ext_resource type="Script" path="res://objects/npc/randomly_moving_npc.gd" id="2_678rl"]
+
+[node name="RandomlyMovingNpc" instance=ExtResource("1_rhn7a")]
+z_index = 0
+script = ExtResource("2_678rl")
+max_wait_time = 10.0
+min_wait_time = 3.0
+move_speed = 100.0
+enable_nav_agent_debug = false
+timeout_time = 30.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -1.5)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" parent="InteractArea" index="0"]
+position = Vector2(0, -20)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
+
+[node name="Timer" type="Timer" parent="." index="4"]
+one_shot = true
+
+[node name="TimeoutTimer" type="Timer" parent="." index="5"]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimeoutTimer" to="." method="_on_navigation_agent_2d_target_reached"]
