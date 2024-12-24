@@ -29,11 +29,20 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Добро пожаловать! Наша команда 4precent
+хочет представить прототип нашей игры,
+в котором мы покажем основные идеи и механики.
+Надеемся, что тебе будет интересно попробовать.
+Удачной игры!"
+horizontal_alignment = 1
+
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 400)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
@@ -49,18 +58,5 @@ script = ExtResource("3_l3o1n")
 [node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 358.0
-offset_top = 103.0
-offset_right = 799.0
-offset_bottom = 204.0
-text = "Добро пожаловать! Наша команда 4precent
-хочет представить прототип нашей игры,
-в котором мы покажем основные идеи и механики.
-Надеемся, что тебе будет интересно попробовать.
-Удачной игры!"
-horizontal_alignment = 1
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button" to="HBoxContainer/VBoxContainer2/Button" method="_back_to_main_menu"]
