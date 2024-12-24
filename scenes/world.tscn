@@ -45,7 +45,7 @@ tileMap = NodePath("../TileMapLayer3")
 
 [node name="Player" parent="." node_paths=PackedStringArray("tileMap") instance=ExtResource("4_uuhwr")]
 z_index = 1
-position = Vector2(2210, 955)
+position = Vector2(2196, 911)
 tileMap = NodePath("../TileMapLayer3")
 speed = 160.0
 
@@ -133,7 +133,6 @@ lore_name = "Bob"
 position = Vector2(2278, 1037)
 frames = ExtResource("7_mlarw")
 lore_name = "Ivan"
-can_interact = false
 
 [node name="Entity" parent="." instance=ExtResource("10_d8chf")]
 position = Vector2(2404, 737)

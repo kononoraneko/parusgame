@@ -4,7 +4,8 @@ var player
 @onready var entrance_markers: Node2D = $EntranceMarkers
 @export var player_speed = 150
 @export var player_scale:Vector2 = Vector2(1,1)
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
 	if has_node("Player"):
 		player = $Player

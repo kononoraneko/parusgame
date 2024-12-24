@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://xg8yfjpygsu7"]
+
+[ext_resource type="Texture2D" uid="uid://cyw04ntafjigc" path="res://assets/Tiny Wonder UI Free/buttons free.png" id="1_3yg15"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30146"]
+atlas = ExtResource("1_3yg15")
+region = Rect2(7.08687, 1.87421, 34.7447, 28.3747)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psvqi"]
+atlas = ExtResource("1_3yg15")
+region = Rect2(7.08687, 1.87421, 33.5709, 28.3747)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhet3"]
+texture = SubResource("AtlasTexture_psvqi")
+modulate_color = Color(0.800491, 0.800491, 0.800491, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nkgjk"]
+texture = SubResource("AtlasTexture_psvqi")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7e08"]
+atlas = ExtResource("1_3yg15")
+region = Rect2(55.1474, 3.75743, 33.7268, 26.8028)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exw3n"]
+texture = SubResource("AtlasTexture_e7e08")
+modulate_color = Color(0.629675, 0.629675, 0.629675, 1)
+
+[resource]
+/icons/normal_button_texture = SubResource("AtlasTexture_30146")
+Button/colors/font_color = Color(0.197938, 0.197937, 0.197937, 1)
+Button/colors/font_focus_color = Color(0.528434, 0.205527, 0.205348, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxTexture_hhet3")
+Button/styles/normal = SubResource("StyleBoxTexture_nkgjk")
+Button/styles/pressed = SubResource("StyleBoxTexture_exw3n")
+Label/colors/font_color = Color(0.973881, 0.668608, 0.499696, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 4
+Label/font_sizes/font_size = 29
