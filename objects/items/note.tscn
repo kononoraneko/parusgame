@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ubx1huituigt"]
+
+[ext_resource type="PackedScene" uid="uid://cqxnimoj6ychs" path="res://objects/entity/entity.tscn" id="1_5e51q"]
+[ext_resource type="Script" path="res://note.gd" id="2_u6x6r"]
+[ext_resource type="Texture2D" uid="uid://euwqbvgd8aec" path="res://assets/note.png" id="3_y16fj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2k3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_y16fj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Note" instance=ExtResource("1_5e51q")]
+script = ExtResource("2_u6x6r")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, 0)
+sprite_frames = SubResource("SpriteFrames_f2k3v")
+animation = &"default"
+
+[node name="CollisionShape2D" parent="InteractArea" index="0"]
+position = Vector2(0, 0)

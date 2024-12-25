@@ -8,10 +8,10 @@ var scene_dir_path = "res://scenes/"
 
 
 func change_scene(from, to_scene_name: String) -> void:
-	last_scene_name = from.name 
+	last_scene_name = from.name
 	player = from.player
 	
-	if from.name == "World":
+	if from.name == "world":
 		for child in from.get_children():
 			if child is Area2D:
 				for s in child.get_signal_connection_list("body_entered"):
@@ -25,7 +25,6 @@ func change_scene(from, to_scene_name: String) -> void:
 	player.get_parent().remove_child(player)
 	
 	if to_scene_name == "world" and world.can_instantiate():
-		
 		get_tree().call_deferred("change_scene_to_packed", world)
 		return
 	

@@ -6,7 +6,8 @@ class_name randomlyMovingNpc extends NPC
 @export var min_wait_time:float = 3
 @export var move_speed:float = 100
 @export var enable_nav_agent_debug:bool = false
-
+var is_speaking:bool = false
+var player:Player
 @export var timeout_time:float = 30
 
 func _ready():
@@ -17,7 +18,11 @@ func _ready():
 	navigation_agent.debug_enabled = enable_nav_agent_debug
 	set_timer()
 
-
+func interact(_player:Player):
+	super(_player)
+	is_speaking = true
+	player = _player
+	
 
 func set_movement_target(movement_target: Vector2):
 	navigation_agent.target_position = movement_target
@@ -27,6 +32,14 @@ func get_random_point():
 
 
 func _physics_process(_delta):
+	if is_speaking == true:
+		if player.is_dialog_opened:
+			$AnimatedSprite2D.animation = "idle"
+			return
+		else:
+			is_speaking = false
+	
+	
 	if navigation_agent.is_navigation_finished():
 		$AnimatedSprite2D.animation = "idle"
 		return

@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://u2a1otuj140r"]
+[gd_scene load_steps=5 format=3 uid="uid://u2a1otuj140r"]
 
 [ext_resource type="PackedScene" uid="uid://5xs1vnhijpom" path="res://objects/items/collectable.tscn" id="1_y0san"]
 [ext_resource type="Script" path="res://objects/items/stick.gd" id="2_1rwgw"]
-[ext_resource type="Texture2D" uid="uid://b42enthuxdubk" path="res://assets/test/textures/ground/FarmLand_Tile.png" id="3_7puyi"]
+[ext_resource type="Texture2D" uid="uid://uqd023kgg3ud" path="res://assets/houses/Textures/GRASS+.png" id="3_h146b"]
 
-[node name="Node2D" instance=ExtResource("1_y0san")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1m0w"]
+atlas = ExtResource("3_h146b")
+region = Rect2(112, 192.166, 16.0999, 16.5294)
+
+[node name="Stick" instance=ExtResource("1_y0san")]
 script = ExtResource("2_1rwgw")
 
 [node name="Sprite2D" parent="." index="1"]
 z_index = 1
 y_sort_enabled = true
-texture = ExtResource("3_7puyi")
+texture_filter = 1
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_b1m0w")

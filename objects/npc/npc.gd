@@ -6,4 +6,4 @@ var needed_progress = 1
 var tasks = []
 
 func interact(player: Player) -> void:
-	player.show_dialog(TaskManager.get_dialog(self, player))
+	player.show_dialog(TaskManager.get_dialog(self, player), lore_name)

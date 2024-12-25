@@ -28,7 +28,6 @@ func remove_items(item:CollectableItem, count:int):
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 	
-	
 
 func _process(delta: float) -> void:
 	if !is_dialog_opened:
@@ -36,6 +35,7 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	#print(scene_manager.last_scene_name)
 	animation_handler()
 	input_handler()
 
@@ -83,7 +83,7 @@ func input_handler() -> void:
 			if len(dialog_array) == dialog_step:
 				close_dialog()
 				return
-			$CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer/DialogTextLabel.text = dialog_array[dialog_step]
+			$CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer/VBoxContainer/DialogTextLabel.text = dialog_array[dialog_step]
 
 	elif $InteractRayCast.is_colliding():
 		if !is_instance_valid($InteractRayCast.get_collider()):
@@ -99,11 +99,13 @@ func input_handler() -> void:
 		
 
 
-func show_dialog(text):
+func show_dialog(text, _name = null):
 	dialog_array = text
 	is_dialog_opened = true
-	$CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer/DialogTextLabel.text = dialog_array[0]
+	$CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer/VBoxContainer/DialogTextLabel.text = dialog_array[0]
 	$CanvasLayer/VBoxContainer/DialogPanel.show()
+	if _name != null:
+		$CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer/VBoxContainer/NameTextLabel.text = _name
 
 
 func close_dialog():
@@ -111,4 +113,4 @@ func close_dialog():
 	dialog_array = []
 	is_dialog_opened = false
 	$CanvasLayer/VBoxContainer/DialogPanel.hide()
-	$CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer/DialogTextLabel.text = ""
+	$CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer/VBoxContainer/DialogTextLabel.text = ""

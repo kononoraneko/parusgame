@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ba17cqsdlnuii"]
 
 [ext_resource type="Script" path="res://objects/player/player.gd" id="1_8a42h"]
-[ext_resource type="SpriteFrames" uid="uid://bhsrml1l786dk" path="res://objects/player/player_frames.tres" id="2_v3jyy"]
+[ext_resource type="SpriteFrames" uid="uid://bhsrml1l786dk" path="res://resources/player_frames.tres" id="2_v3jyy"]
 [ext_resource type="Script" path="res://objects/player/debug.gd" id="3_cncn3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7prk6"]
@@ -72,6 +72,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="DebugInfo" type="Label" parent="CanvasLayer/VBoxContainer/Control"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
@@ -97,7 +98,18 @@ grow_vertical = 2
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="DialogTextLabel" type="Label" parent="CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameTextLabel" type="Label" parent="CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="DialogTextLabel" type="Label" parent="CanvasLayer/VBoxContainer/DialogPanel/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
