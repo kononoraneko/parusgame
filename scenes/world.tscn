@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://dg71a47enlin"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_bx63j"]
-[ext_resource type="TileSet" uid="uid://662qs7k7wao3" path="res://assets/houses/Интерьер+Комната (2).tres" id="2_8kq2g"]
+[ext_resource type="TileSet" uid="uid://cnm7eodqs2d4b" path="res://new/Интерьер+Комната.tres" id="2_8kq2g"]
 [ext_resource type="Script" path="res://objects/player/camera.gd" id="3_ah5ej"]
 [ext_resource type="PackedScene" uid="uid://ba17cqsdlnuii" path="res://objects/player/player.tscn" id="4_uuhwr"]
 [ext_resource type="PackedScene" uid="uid://u2a1otuj140r" path="res://objects/items/stick.tscn" id="6_qva6u"]
